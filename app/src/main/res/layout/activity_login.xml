@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ADE7EF">
+
+    <com.example.imdemo.view.CustomView.CustomImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/iv_login"
+        custom:src="@drawable/a"
+        custom:type="circle"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true">
+
+    </com.example.imdemo.view.CustomView.CustomImageView>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ed_login_number"
+        android:layout_below="@+id/iv_login"
+        android:layout_marginTop="20dp"
+        android:hint="QQ号/手机号/邮箱"
+        android:textSize="26sp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ed_login_password"
+        android:singleLine="true"
+        android:layout_below="@+id/ed_login_number"
+        android:textSize="26sp"
+        android:hint="密码"
+        />
+    <Button
+        android:background="#1FBAF3"
+        android:singleLine="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_login"
+        android:layout_below="@+id/ed_login_password"
+        android:layout_margin="10dp"
+        android:text="登录"
+        android:textColor="#F6FCFF"/>
+</RelativeLayout>

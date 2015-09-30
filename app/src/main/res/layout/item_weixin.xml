@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ll_item_weixin">
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/iv_item_weixin_face"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        >
+        <TextView
+            android:text="订阅号"
+            android:id="@+id/tv_item_weixin_title"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"/>
+        <TextView
+            android:id="@+id/tv_item_weixin_content"
+            android:text="我在马路边捡到一分钱，交给警察叔叔手里边"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:layout_height="0dp" />
+    </LinearLayout>
+</LinearLayout>
