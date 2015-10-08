@@ -5,6 +5,7 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -26,10 +27,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     private TextView mContactTextView;
     private TextView mDiscoverTextView;
     private TextView mMineTextView;
-    private Button mWeixinButton;
-    private Button mContactButton;
-    private Button mDiscoverButton;
-    private Button mMineButton;
+    private ImageButton mWeixinButton;
+    private ImageButton mContactButton;
+    private ImageButton mDiscoverButton;
+    private ImageButton mMineButton;
     private ViewPager mViewPager;
     private List<Fragment> mFragments;
     private FragmentPagerAdapter mAdapter;
@@ -42,7 +43,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     }
 
     private void initEvent() {
-
+        mWeixinLinearLayout.setOnClickListener(this);
+        mContactLinearLayout.setOnClickListener(this);
+        mDiscoverLinearLayout.setOnClickListener(this);
+        mMineLinearLayout.setOnClickListener(this);
     }
 
     private void initView() {
@@ -50,10 +54,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         mContactLinearLayout = (LinearLayout) findViewById(R.id.ll_contact);
         mDiscoverLinearLayout = (LinearLayout) findViewById(R.id.ll_discover);
         mMineLinearLayout = (LinearLayout) findViewById(R.id.ll_mine);
-        mWeixinButton = (Button) findViewById(R.id.btn_bottom_weixin);
-        mContactButton = (Button) findViewById(R.id.btn_bottom_contact);
-        mDiscoverButton = (Button) findViewById(R.id.btn_bottom_discover);
-        mMineButton = (Button) findViewById(R.id.btn_bottom_mine);
+        mWeixinButton = (ImageButton) findViewById(R.id.btn_bottom_weixin);
+        mContactButton = (ImageButton) findViewById(R.id.btn_bottom_contact);
+        mDiscoverButton = (ImageButton) findViewById(R.id.btn_bottom_discover);
+        mMineButton = (ImageButton) findViewById(R.id.btn_bottom_mine);
         mViewPager = (ViewPager) findViewById(R.id.view_pager);
         mFragments = new ArrayList<>();
         WeixinFragment weixinFragment = new WeixinFragment();
@@ -76,14 +80,70 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             }
         };
         mViewPager.setAdapter(mAdapter);
+        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                resectButtonImage();
+                int currentItem = mViewPager.getCurrentItem();
+                switch (currentItem){
+                    case 0:
+                        mWeixinButton.setImageResource(R.drawable.weixin_check);
+                        break;
+                    case 1:
+                        mContactButton.setImageResource(R.drawable.contact_check);
+                        break;
+                    case 2:
+                        mDiscoverButton.setImageResource(R.drawable.discover_check);
+                        break;
+                    case 3:
+                        mMineButton.setImageResource(R.drawable.mine_check);
+                        break;
+
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
     }
 
+
+
     @Override
     public void onClick(View v) {
-        mWeixinLinearLayout.setOnClickListener(this);
-        mContactLinearLayout.setOnClickListener(this);
-        mDiscoverLinearLayout.setOnClickListener(this);
-        mMineLinearLayout.setOnClickListener(this);
+        resectButtonImage();
+        switch (v.getId()){
+            case R.id.ll_weixin:
+                mViewPager.setCurrentItem(0);
+                mWeixinButton.setImageResource(R.drawable.weixin_check);
+                break;
+            case R.id.ll_contact:
+                mViewPager.setCurrentItem(1);
+                mContactButton.setImageResource(R.drawable.contact_check);
+                break;
+            case R.id.ll_discover:
+                mViewPager.setCurrentItem(2);
+                mDiscoverButton.setImageResource(R.drawable.discover_check);
+                break;
+            case R.id.ll_mine:
+                mViewPager.setCurrentItem(3);
+                mMineButton.setImageResource(R.drawable.mine_check);
+                break;
+        }
+    }
+
+    private void resectButtonImage() {
+        mWeixinButton.setImageResource(R.drawable.weixin_normal);
+        mContactButton.setImageResource(R.drawable.contact_normal);
+        mDiscoverButton.setImageResource(R.drawable.discover_normal);
+        mMineButton.setImageResource(R.drawable.mine_normal);
     }
 }

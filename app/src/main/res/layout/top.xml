@@ -15,15 +15,16 @@
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <Button
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/search"
             android:id="@+id/btn_top_search"
-            android:text="搜索"/>
-        <Button
+            />
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="添加"
+            android:background="@drawable/add"
             android:id="@+id/btn_top_add"/>
     </LinearLayout>
 
