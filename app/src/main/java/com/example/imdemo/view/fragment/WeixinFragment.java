@@ -1,5 +1,6 @@
 package com.example.imdemo.view.fragment;
 
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,10 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.imdemo.model.ItemWeixin;
 import com.example.imdemo.R;
 import com.example.imdemo.adapter.WeixinAdapter;
+import com.example.imdemo.view.activity.ChatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,5 +49,14 @@ public class WeixinFragment extends ListFragment {
             weixin.setFace(BitmapFactory.decodeResource(this.getResources(), R.drawable.a));
             weixinList.add(weixin);
         }
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        ItemWeixin weixin = adapter.getItem(position);
+        Intent intent = new Intent(getActivity(), ChatActivity.class);
+        intent.putExtra("Title",weixin.getTitle());
+        startActivity(intent);
     }
 }

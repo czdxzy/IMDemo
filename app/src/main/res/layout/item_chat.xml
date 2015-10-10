@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+    <LinearLayout
+        android:id="@+id/ll_receive_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:orientation="horizontal">
+        <com.example.imdemo.view.CustomView.CustomImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/receive_message_face"
+            custom:src="@drawable/a"
+            custom:type="circle"
+            android:layout_centerHorizontal="true">
+        </com.example.imdemo.view.CustomView.CustomImageView>
+        <TextView
+            android:gravity="center"
+            android:background="@drawable/message_left"
+            android:textColor="#fff"
+            android:id="@+id/tv_receive_message"
+            android:text="Receiver"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_send_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:orientation="horizontal">
+        <TextView
+            android:gravity="center"
+            android:background="@drawable/message_right"
+            android:text="send"
+            android:paddingRight="10dp"
+            android:id="@+id/tv_send_message"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.example.imdemo.view.CustomView.CustomImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/send_message_face"
+            custom:src="@drawable/a"
+            custom:type="circle"
+            android:layout_centerHorizontal="true">
+        </com.example.imdemo.view.CustomView.CustomImageView>
+    </LinearLayout>
+</LinearLayout>
