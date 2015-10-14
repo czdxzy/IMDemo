@@ -25,6 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:id="@+id/lv_friend_states"
+        android:focusable="false"
         android:layout_weight="1">
     </ListView>
 

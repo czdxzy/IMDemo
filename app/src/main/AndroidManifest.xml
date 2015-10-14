@@ -23,6 +23,9 @@
         <activity android:name=".view.activity.ChatActivity">
 
         </activity>
+        <activity android:name=".view.activity.MyZoneActivity">
+
+        </activity>
         <service android:name="com.avos.avoscloud.PushService" />
 
         <receiver android:name="com.avos.avoscloud.AVBroadcastReceiver">

@@ -25,7 +25,6 @@ import java.util.List;
 public class WeixinFragment extends ListFragment {
     private List<ItemWeixin> weixinList=new ArrayList<>();
     private WeixinAdapter adapter =null;
-    private ListView listView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

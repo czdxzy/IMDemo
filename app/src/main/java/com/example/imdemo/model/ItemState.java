@@ -1,5 +1,6 @@
 package com.example.imdemo.model;
 
+import android.graphics.Bitmap;
 import android.widget.ListView;
 
 import java.util.List;
@@ -11,6 +12,17 @@ public class ItemState {
     private String name;
     private String state;
     private String time;
+    private Bitmap face;
+    private String comment;
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
     private List<Comment> commentList;
 
     public List<Comment> getCommentList() {
@@ -43,5 +55,21 @@ public class ItemState {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Bitmap getFace() {
+        return face;
+    }
+
+    public void setFace(Bitmap face) {
+        this.face = face;
+    }
+    public  String getComments(){
+        String comments=new String();
+        for (int i=0;i<this.commentList.size();i++){
+            Comment comment = commentList.get(i);
+            comments += comment.toString()+"\n";
+        }
+        return comments;
     }
 }

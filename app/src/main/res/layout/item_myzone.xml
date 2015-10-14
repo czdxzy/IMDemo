@@ -8,7 +8,7 @@
     <com.example.imdemo.view.CustomView.CustomImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:id="@+id/receive_message_face"
+        android:id="@+id/state_message_face"
         custom:src="@drawable/a"
         custom:type="circle"
         android:layout_centerHorizontal="true">
@@ -40,12 +40,12 @@
             android:layout_height="wrap_content"
             android:id="@+id/tv_state_content"
             android:text="这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试"/>
-        <ListView
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#EAEAEE"
-            android:id="@+id/lv_item_friend_comments">
-        </ListView>
+            android:id="@+id/tv_state_discuss"
+            android:text="这是好友的评论"
+            android:background="#999999"
+            android:layout_height="wrap_content" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
